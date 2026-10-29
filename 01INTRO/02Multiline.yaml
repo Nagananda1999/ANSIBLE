@@ -1,0 +1,10 @@
+literal: |
+  line: one
+  line: two
+  line: three
+
+
+# $ yq -r .literal 06Multiline.yaml 
+# line: one
+# line: two
+# line: three

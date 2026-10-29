@@ -1,0 +1,36 @@
+baseLimits: &baseLimits
+  cpu: "500m"
+  memory: "512Mi"
+
+dev:
+  limits:
+    <<: *baseLimits
+
+test:
+  limits:
+    <<: *baseLimits
+    cpu: "750m"
+
+prod:
+  limits:
+    <<: *baseLimits
+    cpu: "2"
+    memory: "4Gi"
+
+# $ yq 'explode(.)' 07anchors_alias.yaml 
+# time=2026-10-19T09:07:53.453+05:30 level=WARN msg="--yaml-fix-merge-anchor-to-spec is false; causing merge anchors to override the existing values which isn't to the yaml spec. This flag will default to true in late 2025."
+# baseLimits:
+#   cpu: "500m"
+#   memory: "512Mi"
+# dev:
+#   limits:
+#     cpu: "500m"
+#     memory: "512Mi"
+# test:
+#   limits:
+#     memory: "512Mi"
+#     cpu: "750m"
+# prod:
+#   limits:
+#     cpu: "2"
+#     memory: "4Gi"
