@@ -1,0 +1,10 @@
+- name: showFacts
+  hosts: localhost
+  tasks:
+    - shell: echo "HELLO WORLD"
+
+
+- name: ERROR_HELLO
+  hosts: localhost
+  tasks:
+    - shell: echo "HELLO WORLD {{ var }} "
